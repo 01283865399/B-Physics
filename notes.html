@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#050A10">
+    <title>ملاحظاتي | بيتو فيزيكس</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/courses.css?v=3">
+    <link rel="stylesheet" href="css/physics-theme.css?v=10">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config/auth-config.js"></script>
+    <link rel="stylesheet" href="css/mycv-editorial.css?v=24">
+<link rel="icon" type="image/png" href="assets/einstein-favicon.png?v=1"></head>
+<body class="courses-page">
+<header class="site-header">
+    <a class="site-logo" href="index.html" aria-label="B squared Physics by Eng. Peter"><span class="site-logo-mark">B<b>²</b></span><span class="site-logo-copy"><strong>Physics</strong><small>by Eng. Peter</small></span></a>
+    <nav class="site-nav" id="primary-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="notes.html">Notes</a><a href="exams.html">Exams</a><a href="about.html">About</a></nav>
+    <div class="site-actions"><button class="site-search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="site-search-panel" aria-label="Open site search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></button><a class="site-login" href="login.html"><i class="far fa-user" aria-hidden="true"></i><span>Login</span></a><button class="site-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><i class="fas fa-bars" aria-hidden="true"></i></button></div>
+    <section class="site-search-panel" id="site-search-panel" aria-label="Search courses and lessons" hidden><form class="site-search-form" role="search"><label class="sr-only" for="site-search-input">Search courses and lessons</label><input id="site-search-input" type="search" placeholder="Search physics courses and lessons..." autocomplete="off"><button class="physics-button" type="submit">Search</button></form><div class="site-search-results" aria-live="polite"></div><p class="site-search-hint">Search by grade, unit, lesson, or physics topic.</p></section>
+</header>
+<main class="courses-shell">
+    <section class="courses-hero">
+        <span class="courses-kicker">بيتو فيزيكس / ملاحظاتك</span>
+        <h1>دفتر ملاحظاتك</h1>
+        <p>اكتب ملخصاتك وأسئلتك للمراجعة. تُحفظ الملاحظات على حسابك عند تسجيل الدخول وإعداد قاعدة البيانات.</p>
+    </section>
+    <section class="course-panel notes-editor" aria-labelledby="notes-heading">
+        <h2 id="notes-heading"><i class="fas fa-note-sticky" aria-hidden="true"></i> ملاحظات عامة</h2>
+        <label for="student-notes">ملاحظات الفيزياء</label>
+        <textarea id="student-notes" maxlength="10000" placeholder="دوّن أفكارك، القوانين التي تريد مراجعتها، أو الأسئلة التي تحتاج إلى حل..."></textarea>
+        <div>
+            <button class="physics-button" id="save-student-notes" type="button">حفظ الملاحظات</button>
+            <a class="physics-button" href="profile.html">حساب الطالب</a>
+        </div>
+        <p id="notes-status" role="status" aria-live="polite">جارٍ التحقق من حالة تسجيل الدخول...</p>
+    </section>
+    <p class="page-notice">تحتاج مزامنة الملاحظات إلى جلسة مسجلة وقاعدة Supabase متاحة. إذا لم تكن مسجلًا، ستظل الكتابة في هذه الصفحة مؤقتة فقط.</p>
+</main>
+<script src="js/courses-data.js?v=6"></script>
+<script src="js/physics-ui.js?v=30"></script>
+<script src="js/learning-data.js?v=3"></script>
+<script src="js/notes.js?v=2"></script>
+</body>
+</html>

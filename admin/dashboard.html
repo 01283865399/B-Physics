@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#050A10">
+    <title>إدارة المحتوى | بيتو فيزيكس</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/courses.css?v=3">
+    <link rel="stylesheet" href="../css/physics-theme.css?v=10">
+    <link rel="stylesheet" href="../css/mycv-editorial.css?v=24">
+    <link rel="stylesheet" href="../css/admin-dashboard.css?v=1">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../config/auth-config.js"></script>
+    <link rel="icon" type="image/png" href="../assets/einstein-favicon.png?v=1">
+</head>
+<body class="courses-page admin-page">
+    <main class="courses-shell admin-shell">
+        <header class="admin-topbar">
+            <a class="admin-brand" href="../index.html"><span>B²</span><span><strong>إدارة المحتوى</strong><small>منصة بيتو فيزيكس</small></span></a>
+            <div class="admin-topbar-actions"><a class="physics-button" href="../login.html?redirect=%2Fadmin%2Fdashboard.html">تسجيل الدخول</a><a class="physics-button" href="../index.html">العودة إلى المنصة</a></div>
+        </header>
+
+        <section class="courses-hero admin-hero">
+            <span class="courses-kicker">لوحة المدرس</span>
+            <h1>إدارة المقررات والدروس</h1>
+            <p>أضف وحدّث محتوى الفيزياء، واربط فيديوهات يوتيوب والملفات والاختبارات من مكان واحد.</p>
+        </section>
+
+        <section id="admin-status-panel" class="admin-notice" aria-live="polite">
+            <h2 id="admin-status-title">جارٍ التحقق من الصلاحية...</h2>
+            <p id="admin-status">يتم تحميل بيانات المحتوى بعد تأكيد صلاحية المدرس.</p>
+        </section>
+        <p id="admin-message" class="admin-message" role="status" aria-live="polite"></p>
+
+        <section id="admin-overview" class="admin-stats" aria-label="ملخص قاعدة البيانات" hidden>
+            <article><span>المقررات</span><strong id="admin-courses">—</strong></article>
+            <article><span>الوحدات</span><strong id="admin-units">—</strong></article>
+            <article><span>الدروس</span><strong id="admin-lessons">—</strong></article>
+            <article><span>الاختبارات</span><strong id="admin-quizzes">—</strong></article>
+            <article><span>الملفات</span><strong id="admin-resources">—</strong></article>
+        </section>
+
+        <section id="admin-seed-panel" class="admin-panel" hidden>
+            <span class="admin-panel-icon" aria-hidden="true">01</span>
+            <div>
+                <h2>تهيئة المحتوى الحالي</h2>
+                <p>انقل المقررات الحالية إلى قاعدة البيانات مرة واحدة، وبعدها ستديرها من هنا. العملية لا تستبدل أي سجلات موجودة.</p>
+                <button id="admin-seed" class="admin-primary" type="button">استيراد المقررات الحالية</button>
+            </div>
+        </section>
+
+        <section id="admin-workspace" hidden>
+            <nav class="admin-tabs" aria-label="أقسام لوحة التحكم">
+                <button type="button" class="is-active" data-admin-tab="content">المقررات والدروس</button>
+                <button type="button" data-admin-tab="quizzes">الاختبارات</button>
+            </nav>
+
+            <section class="admin-tab-panel" id="admin-content-panel" data-panel="content">
+                <div class="admin-work-grid">
+                    <section class="admin-panel">
+                        <div class="admin-section-heading">
+                            <div><span class="admin-eyebrow">المرحلة 1</span><h2>المقرر</h2></div>
+                            <button id="new-course" class="admin-secondary" type="button">مقرر جديد</button>
+                        </div>
+                        <label class="admin-label" for="course-select">المقرر الحالي</label>
+                        <select id="course-select"></select>
+                        <form id="course-form" class="admin-form">
+                            <label>معرّف المقرر<input id="course-id" required maxlength="120" pattern="[A-Za-z0-9:_\-]+" placeholder="grade-3-physics"></label>
+                            <label>الصف<select id="course-grade" required></select></label>
+                            <label>الأنظمة الدراسية<select id="course-systems" multiple required aria-label="اختر نظامًا دراسيًا واحدًا أو أكثر"></select></label>
+                            <label>اسم المقرر<input id="course-title" required maxlength="160"></label>
+                            <label>وصف المقرر<textarea id="course-description" rows="3" maxlength="2000"></textarea></label>
+                            <div class="admin-form-actions"><button class="admin-primary" type="submit">حفظ المقرر</button><button id="delete-course" class="admin-danger" type="button">حذف المقرر</button></div>
+                        </form>
+                    </section>
+
+                    <section class="admin-panel">
+                        <div class="admin-section-heading">
+                            <div><span class="admin-eyebrow">المرحلة 2</span><h2>الوحدة</h2></div>
+                            <button id="new-unit" class="admin-secondary" type="button">وحدة جديدة</button>
+                        </div>
+                        <label class="admin-label" for="unit-select">الوحدة الحالية</label>
+                        <select id="unit-select"></select>
+                        <form id="unit-form" class="admin-form">
+                            <label>معرّف الوحدة<input id="unit-id" required maxlength="120" pattern="[A-Za-z0-9:_\-]+" placeholder="unit-mechanics"></label>
+                            <label>اسم الوحدة<input id="unit-title" required maxlength="160"></label>
+                            <label>ترتيب الوحدة<input id="unit-position" type="number" min="0" step="1" value="0"></label>
+                            <div class="admin-form-actions"><button class="admin-primary" type="submit">حفظ الوحدة</button><button id="delete-unit" class="admin-danger" type="button">حذف الوحدة</button></div>
+                        </form>
+                    </section>
+                </div>
+
+                <section class="admin-panel admin-lesson-panel">
+                    <div class="admin-section-heading">
+                        <div><span class="admin-eyebrow">المرحلة 3</span><h2>الدرس ومحتواه</h2></div>
+                        <button id="new-lesson" class="admin-secondary" type="button">درس جديد</button>
+                    </div>
+                    <label class="admin-label" for="lesson-select">الدرس الحالي</label>
+                    <select id="lesson-select"></select>
+                    <form id="lesson-form" class="admin-form admin-lesson-form">
+                        <div class="admin-form-grid">
+                            <label>معرّف الدرس<input id="lesson-id" required maxlength="120" pattern="[A-Za-z0-9:_\-]+" placeholder="lesson-newton-laws"></label>
+                            <label>عنوان الدرس<input id="lesson-title" required maxlength="180"></label>
+                            <label>ترتيب الدرس<input id="lesson-position" type="number" min="0" step="1" value="0"></label>
+                            <label class="admin-wide">رابط فيديو يوتيوب<input id="lesson-video" type="url" placeholder="https://youtu.be/..."></label>
+                            <label class="admin-wide">وصف قصير<input id="lesson-description" maxlength="2000"></label>
+                            <label class="admin-wide">ملخص الدرس<textarea id="lesson-summary" rows="5" maxlength="12000"></textarea></label>
+                            <label class="admin-wide">أهداف التعلّم، هدف واحد في كل سطر<textarea id="lesson-objectives" rows="3" placeholder="فهم العلاقة بين القوة والتسارع"></textarea></label>
+                        </div>
+                        <section class="admin-resources" aria-labelledby="resource-heading">
+                            <div class="admin-section-heading"><div><span class="admin-eyebrow">روابط خارجية أولًا</span><h3 id="resource-heading">الملفات والمواد المساندة</h3></div></div>
+                            <ul id="resource-list" class="admin-resource-list"></ul>
+                            <div class="admin-resource-tools">
+                                <label>اسم الملف<input id="resource-title" maxlength="160" placeholder="ورقة عمل الوحدة"></label>
+                                <label class="admin-resource-url">رابط الملف<input id="resource-url" type="url" placeholder="https://..."></label>
+                                <button id="add-resource-link" class="admin-secondary" type="button">إضافة الرابط</button>
+                            </div>
+                            <div class="admin-upload-row">
+                                <label for="resource-file">أو ارفع ملفًا (PDF، صور، DOCX، PPTX — حتى 50 ميجابايت)</label>
+                                <input id="resource-file" type="file" accept=".pdf,.jpg,.jpeg,.png,.webp,.docx,.pptx">
+                                <button id="upload-resource" class="admin-secondary" type="button">رفع الملف إلى Supabase</button>
+                            </div>
+                        </section>
+                        <div class="admin-form-actions"><button class="admin-primary" type="submit">حفظ الدرس</button><button id="delete-lesson" class="admin-danger" type="button">حذف الدرس</button></div>
+                    </form>
+                </section>
+            </section>
+
+            <section class="admin-tab-panel" id="admin-quizzes-panel" data-panel="quizzes" hidden>
+                <section class="admin-panel">
+                    <div class="admin-section-heading"><div><span class="admin-eyebrow">بنك الأسئلة</span><h2>اختبار الوحدة</h2></div></div>
+                    <label class="admin-label" for="quiz-unit-select">اختر الوحدة</label>
+                    <select id="quiz-unit-select"></select>
+                    <form id="quiz-form" class="admin-form" hidden>
+                        <label>معرّف الاختبار<input id="quiz-id" required maxlength="120" pattern="[A-Za-z0-9:_\-]+"></label>
+                        <label>عنوان الاختبار<input id="quiz-title" required maxlength="180"></label>
+                        <div class="admin-question-heading"><h3>الأسئلة</h3><button id="add-question" class="admin-secondary" type="button">إضافة سؤال</button></div>
+                        <div id="quiz-questions" class="admin-questions"></div>
+                        <div class="admin-form-actions"><button class="admin-primary" type="submit">حفظ الاختبار</button><button id="delete-quiz" class="admin-danger" type="button">حذف الاختبار</button></div>
+                    </form>
+                    <p id="quiz-empty" class="admin-empty" hidden>أضف وحدة أولًا، ثم اخترها لإنشاء اختبار.</p>
+                </section>
+            </section>
+        </section>
+    </main>
+    <script src="../js/courses-data.js?v=6"></script>
+    <script src="../js/learning-data.js?v=3"></script>
+    <script src="../js/managed-curriculum.js?v=1"></script>
+    <script src="../js/admin.js?v=3"></script>
+</body>
+</html>

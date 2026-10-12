@@ -1,0 +1,360 @@
+html[data-theme="light"] body.physics-auth,
+body.physics-auth {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    color: #f2f5f8 !important;
+    background-color: #07101a !important;
+    background-image: url("../assets/photo_2026-10-11_20-58-53.jpg") !important;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body.physics-auth::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    background:
+        linear-gradient(90deg, rgba(4, 9, 15, .76), rgba(4, 9, 15, .58) 48%, rgba(4, 9, 15, .84)),
+        linear-gradient(0deg, rgba(4, 9, 15, .55), rgba(4, 9, 15, .12));
+    opacity: 1 !important;
+    pointer-events: none;
+}
+
+body.physics-auth [hidden] {
+    display: none !important;
+}
+
+body.physics-auth .site-header {
+    min-height: 76px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .12) !important;
+    background: rgba(5, 11, 18, .82) !important;
+    color: #f2f5f8 !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+body.physics-auth .site-logo,
+body.physics-auth .site-logo-mark,
+body.physics-auth .site-logo-mark b,
+body.physics-auth .site-logo-copy strong,
+body.physics-auth .site-logo-copy small {
+    color: #f2f5f8 !important;
+}
+
+body.physics-auth .site-logo-mark b {
+    color: #ffbd59 !important;
+}
+
+body.physics-auth .site-search-toggle,
+body.physics-auth .site-menu-toggle,
+body.physics-auth .site-login {
+    border-color: rgba(255, 255, 255, .28) !important;
+    background: rgba(255, 255, 255, .06) !important;
+    color: #f2f5f8 !important;
+}
+
+body.physics-auth .site-nav a {
+    color: #e6edf4;
+}
+
+body.physics-auth .global-lang-toggle {
+    top: 92px !important;
+    left: clamp(16px, 3vw, 40px) !important;
+    right: auto !important;
+    border-color: rgba(255, 255, 255, .24) !important;
+    background: rgba(8, 15, 23, .82) !important;
+    color: #f2f5f8 !important;
+}
+
+body.physics-auth .auth-shell {
+    direction: ltr;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 470px);
+    gap: clamp(32px, 7vw, 110px);
+    min-height: 100vh;
+    padding: 112px clamp(24px, 8vw, 120px) 48px;
+    overflow: visible;
+}
+
+body.physics-auth .auth-brand,
+body.physics-auth .auth-panel {
+    direction: rtl;
+    background: transparent !important;
+}
+
+body.physics-auth .auth-brand {
+    justify-content: center;
+    gap: clamp(46px, 10vh, 110px);
+    padding: 30px 0;
+}
+
+body.physics-auth .auth-logo {
+    width: fit-content;
+    gap: 12px;
+    color: #f7f8fa !important;
+    font-size: 1.15rem;
+}
+
+body.physics-auth .auth-logo .logo-icon {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid rgba(255, 189, 89, .45);
+    border-radius: 14px;
+    background: rgba(255, 189, 89, .14) !important;
+    color: #ffd084 !important;
+    font-size: 1.25rem;
+}
+
+body.physics-auth .auth-brand-copy {
+    max-width: 590px;
+}
+
+body.physics-auth .auth-kicker {
+    color: #ffd084 !important;
+    letter-spacing: .04em;
+}
+
+body.physics-auth .auth-brand h1 {
+    color: #fff !important;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    text-shadow: 0 2px 24px rgba(0, 0, 0, .35);
+}
+
+body.physics-auth .auth-brand h1 strong {
+    color: #ffbd59 !important;
+}
+
+body.physics-auth .auth-brand p {
+    max-width: 490px;
+    color: #d3dce6 !important;
+    line-height: 1.9;
+}
+
+body.physics-auth .auth-panel {
+    justify-content: center;
+    padding: 0;
+}
+
+body.physics-auth .auth-panel-inner {
+    width: 100%;
+    max-width: 470px;
+    padding: clamp(28px, 4vw, 44px);
+    border: 1px solid rgba(255, 255, 255, .16);
+    border-radius: 22px;
+    background: rgba(8, 15, 23, .84);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .38), inset 0 1px 0 rgba(255, 255, 255, .06);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+body.physics-auth .auth-back {
+    margin-bottom: 34px;
+    color: #bbc7d4 !important;
+}
+
+body.physics-auth .auth-back:hover,
+body.physics-auth .forgot-password:hover {
+    color: #ffd084 !important;
+}
+
+body.physics-auth .auth-heading h2 {
+    color: #fff !important;
+    font-size: clamp(1.65rem, 3vw, 2rem);
+}
+
+body.physics-auth .auth-heading p {
+    color: #bbc7d4 !important;
+}
+
+body.physics-auth .auth-field label {
+    color: #edf2f7 !important;
+}
+
+html[data-theme="light"] body.physics-auth .auth-field input,
+html[data-theme="light"] body.physics-auth .password-field input,
+body.physics-auth .auth-field input,
+body.physics-auth .password-field input {
+    min-height: 52px;
+    border: 1px solid rgba(214, 226, 239, .24) !important;
+    border-radius: 11px !important;
+    background-color: rgba(255, 255, 255, .075) !important;
+    color: #fff !important;
+    caret-color: #ffbd59;
+}
+
+html[data-theme="light"] body.physics-auth .auth-field input::placeholder,
+body.physics-auth .auth-field input::placeholder {
+    color: #a8b3bf !important;
+    opacity: 1;
+}
+
+html[data-theme="light"] body.physics-auth .auth-field input:focus,
+body.physics-auth .auth-field input:focus {
+    border-color: #ffbd59 !important;
+    box-shadow: 0 0 0 3px rgba(255, 189, 89, .16) !important;
+}
+
+body.physics-auth .password-field button {
+    color: #c2ccd6 !important;
+}
+
+body.physics-auth .password-field button:hover {
+    color: #ffd084 !important;
+    background: rgba(255, 189, 89, .1) !important;
+}
+
+body.physics-auth .forgot-password {
+    color: #c2ccd6 !important;
+}
+
+body.physics-auth .auth-submit {
+    min-height: 52px;
+    border: 1px solid #ffbd59 !important;
+    border-radius: 11px !important;
+    background: #ffbd59 !important;
+    color: #17120a !important;
+    transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease;
+}
+
+body.physics-auth .auth-submit:hover:not(:disabled) {
+    transform: translateY(-1px);
+    background: #ffd084 !important;
+    box-shadow: 0 8px 24px rgba(255, 189, 89, .2);
+}
+
+body.physics-auth .auth-divider {
+    color: #aebac6 !important;
+}
+
+body.physics-auth .auth-divider::before,
+body.physics-auth .auth-divider::after {
+    background: rgba(255, 255, 255, .16);
+}
+
+body.physics-auth .google-submit {
+    min-height: 50px;
+    border: 1px solid rgba(255, 255, 255, .24) !important;
+    border-radius: 11px !important;
+    background: rgba(255, 255, 255, .055) !important;
+    color: #f2f5f8 !important;
+}
+
+body.physics-auth .google-submit:hover:not(:disabled) {
+    border-color: rgba(255, 189, 89, .65) !important;
+    background: rgba(255, 255, 255, .1) !important;
+}
+
+body.physics-auth .auth-message {
+    color: #dce4ec;
+    line-height: 1.7;
+}
+
+body.physics-auth .auth-message.error {
+    color: #ff9696 !important;
+}
+
+body.physics-auth .auth-message.success {
+    color: #76e0ae !important;
+}
+
+body.physics-auth .auth-toggle {
+    color: #ffd084 !important;
+}
+
+body.physics-auth :is(a, button, input):focus-visible {
+    outline: 2px solid #ffd084;
+    outline-offset: 3px;
+}
+
+@media (max-width: 850px) {
+    body.physics-auth {
+        background-attachment: scroll;
+    }
+
+    body.physics-auth .auth-shell {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 26px;
+        padding: 104px 24px 38px;
+    }
+
+    body.physics-auth .auth-brand {
+        min-height: 0;
+        gap: 26px;
+        padding: 8px 0;
+    }
+
+    body.physics-auth .auth-brand h1 {
+        margin: 10px 0;
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    body.physics-auth .auth-brand p {
+        margin-bottom: 0;
+        font-size: .98rem;
+    }
+
+    body.physics-auth .auth-panel-inner {
+        max-width: 540px;
+    }
+}
+
+@media (max-width: 520px) {
+    body.physics-auth .site-header {
+        min-height: 68px !important;
+        padding: 12px 16px !important;
+    }
+
+    body.physics-auth .site-logo-mark {
+        font-size: 1.55rem !important;
+    }
+
+    body.physics-auth .site-logo-copy strong {
+        font-size: .95rem !important;
+    }
+
+    body.physics-auth .auth-shell {
+        gap: 18px;
+        padding: 88px 16px 24px;
+    }
+
+    body.physics-auth .global-lang-toggle {
+        top: 76px !important;
+        left: 16px !important;
+    }
+
+    body.physics-auth .auth-logo {
+        font-size: 1rem;
+    }
+
+    body.physics-auth .auth-logo .logo-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    body.physics-auth .auth-kicker {
+        font-size: .72rem;
+    }
+
+    body.physics-auth .auth-panel-inner {
+        padding: 24px 20px;
+        border-radius: 18px;
+    }
+
+    body.physics-auth .auth-back {
+        margin-bottom: 25px;
+        font-size: .88rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.physics-auth *,
+    body.physics-auth *::before,
+    body.physics-auth *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/browser-compat.js?v=22"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حساب الطالب | بيتو فيزيكس</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=light4">
+    <link rel="stylesheet" href="css/profile.css?v=5">
+    <link rel="stylesheet" href="css/account-enhancements.css?v=1">
+    <link rel="stylesheet" href="css/profile-dashboard.css?v=1">
+    <link rel="stylesheet" href="css/avatar-preview.css?v=1">
+    <link rel="stylesheet" href="css/profile-modern.css?v=1">
+    <link rel="stylesheet" href="css/profile-signout.css?v=1">
+    <link rel="stylesheet" href="css/physics-theme.css?v=10">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config/auth-config.js"></script>
+    <link rel="stylesheet" href="css/mycv-editorial.css?v=24">
+<link rel="icon" type="image/png" href="assets/einstein-favicon.png?v=1"></head>
+<body class="auth-page profile-page physics-profile">
+    <header class="site-header">
+        <a class="site-logo" href="index.html" aria-label="B squared Physics by Eng. Peter"><span class="site-logo-mark">B<b>²</b></span><span class="site-logo-copy"><strong>Physics</strong><small>by Eng. Peter</small></span></a>
+        <nav class="site-nav" id="primary-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="notes.html">Notes</a><a href="exams.html">Exams</a><a href="about.html">About</a></nav>
+        <div class="site-actions"><button class="site-search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="site-search-panel" aria-label="Open site search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></button><a class="site-login" href="profile.html" aria-current="page"><i class="far fa-user" aria-hidden="true"></i><span>Account</span></a><button class="site-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><i class="fas fa-bars" aria-hidden="true"></i></button></div>
+        <section class="site-search-panel" id="site-search-panel" aria-label="Search courses and lessons" hidden><form class="site-search-form" role="search"><label class="sr-only" for="site-search-input">Search courses and lessons</label><input id="site-search-input" type="search" placeholder="Search physics courses and lessons..." autocomplete="off"><button class="physics-button" type="submit">Search</button></form><div class="site-search-results" aria-live="polite"></div><p class="site-search-hint">Search by grade, unit, lesson, or physics topic.</p></section>
+    </header>
+    <main class="profile-shell">
+        <section class="profile-welcome">
+            <div class="profile-welcome-content">
+                <span class="greeting"><i class="fas fa-sparkles"></i> بيتو فيزيكس / حساب الطالب</span>
+                <h1>أهلًا، <span id="welcome-name" class="highlight">متعلم</span></h1>
+                <p>تابع تقدمك، حدّث بياناتك، وواصل التعلم من مكان واحد.</p>
+            </div>
+            <i class="fas fa-layer-group profile-welcome-icon" aria-hidden="true"></i>
+        </section>
+        <section class="profile-card is-loading" aria-labelledby="profile-title">
+            <div class="profile-cover"><span class="cover-badge"><i class="fas fa-shield-halved"></i> حساب موثوق</span></div>
+            <div class="profile-avatar-wrap">
+                <div class="profile-avatar" id="profile-avatar">؟</div>
+                <label class="avatar-upload" for="avatar-input" title="تغيير صورة الحساب" aria-label="تغيير صورة الحساب"><i class="fas fa-camera"></i></label>
+                <input id="avatar-input" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+            </div>
+            <span class="auth-kicker">MY LEARNING SPACE</span>
+            <h1 id="profile-title" class="profile-name">حسابي</h1>
+            <span class="profile-role"><span class="role-dot"></span> طالب في بيتو فيزيكس</span>
+            <p id="profile-status" class="profile-muted">جاري تحميل بيانات الحساب...</p>
+            <p id="avatar-message" class="profile-inline-message" role="status"></p>
+            <div class="profile-stats">
+                <div class="stat-item"><strong id="stat-courses">-</strong><span>مقررات متاحة</span></div>
+                <div class="stat-item"><strong id="stat-quizzes">-</strong><span>اختبارات مكتملة</span></div>
+                <div class="stat-item"><strong id="stat-status">نشط</strong><span>الحالة</span></div>
+            </div>
+            <div class="profile-progress-card">
+                <div class="profile-progress-head"><span>نشاط التعلم</span><strong id="learning-progress-label">جاري الحساب...</strong></div>
+                <div class="profile-progress-track"><span id="learning-progress"></span></div>
+                <small>يُحسب من نشاطك الفعلي داخل المنصة</small>
+            </div>
+            <div class="profile-learning-summary">
+                <div><span>الصف الدراسي</span><strong id="profile-grade-label">لم يتم الاختيار</strong></div>
+                <div><span>النظام</span><strong id="profile-system-label">لم يتم الاختيار</strong></div>
+                <div><span>آخر درس مكتمل</span><strong id="profile-last-lesson">لا يوجد بعد</strong></div>
+                <div><span>آخر نتيجة اختبار</span><strong id="profile-last-quiz">لا توجد نتائج بعد</strong></div>
+            </div>
+                <div class="profile-learning-actions"><a class="profile-continue" href="lessons.html"><i class="fas fa-play"></i><span><strong>متابعة التعلم</strong><small id="profile-next-lesson">ابدأ من الدرس الأول</small></span><i class="fas fa-arrow-left"></i></a></div>
+            <form id="profile-form" class="profile-form">
+                <label for="profile-name-input">الاسم المعروض</label>
+                <div class="profile-edit-row">
+                    <input id="profile-name-input" type="text" maxlength="80" required>
+                </div>
+                <label for="profile-grade-select">الصف الدراسي</label>
+                <select id="profile-grade-select" data-grade-select></select>
+                <label for="profile-system-select">النظام الدراسي</label>
+                <select id="profile-system-select" data-system-select></select>
+                <button class="physics-button" type="submit">حفظ التغييرات</button>
+                <p id="profile-form-message" class="auth-message" role="status"></p>
+            </form>
+            <div class="profile-details">
+                <div class="detail-item"><span class="detail-label"><i class="fas fa-envelope"></i> البريد الإلكتروني</span><strong class="detail-value" id="profile-email">-</strong></div>
+                <div class="detail-item"><span class="detail-label"><i class="fas fa-calendar-days"></i> تاريخ الانضمام</span><strong class="detail-value" id="profile-created">-</strong></div>
+                <div class="detail-item"><span class="detail-label"><i class="fas fa-circle-check"></i> تأكيد البريد</span><strong class="detail-value badge-verified" id="profile-verified">-</strong></div>
+            </div>
+        </section>
+        <section class="profile-overview-grid" aria-label="ملخص التعلم">
+            <article class="profile-overview-panel profile-resume-panel"><div class="overview-panel-heading"><span>متابعة التعلم</span><i class="fas fa-route"></i></div><strong id="profile-resume-title">ابدأ رحلتك التعليمية</strong><p id="profile-resume-text">اختر درسًا وابدأ ببناء تقدمك خطوة بخطوة.</p><a href="lessons.html" class="overview-action">فتح الدروس <i class="fas fa-arrow-left"></i></a></article>
+            <article class="profile-overview-panel"><div class="overview-panel-heading"><span>إنجازاتك</span><i class="fas fa-trophy"></i></div><div class="overview-metrics"><div><strong id="profile-lesson-count">0</strong><small>دروس مكتملة</small></div><div><strong id="profile-quiz-count">0</strong><small>اختبارات مكتملة</small></div></div><a href="courses.html" class="overview-action">تابع المقررات <i class="fas fa-arrow-left"></i></a></article>
+            <article class="profile-overview-panel"><div class="overview-panel-heading"><span>إنجازات مميزة</span><i class="fas fa-medal"></i></div><div class="profile-badges"><span id="badge-first-lesson"><i class="fas fa-lock"></i> أول درس</span><span id="badge-first-quiz"><i class="fas fa-lock"></i> أول اختبار</span><span id="badge-streak"><i class="fas fa-lock"></i> مستمر</span></div><a href="courses.html" class="overview-action">استكشف المقررات <i class="fas fa-arrow-left"></i></a></article>
+        </section>
+        <nav class="profile-quick-links" aria-label="روابط سريعة">
+            <a href="lessons.html"><i class="fas fa-play"></i><span>الدروس</span></a>
+            <a href="courses.html"><i class="fas fa-book-open"></i><span>المقررات</span></a>
+            <a href="https://wa.me/201283865399" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span>الدعم عبر واتساب</span></a>
+        </nav>
+        <div class="profile-signout-area"><button class="profile-signout" id="logout-button" type="button"><i class="fas fa-right-from-bracket"></i> تسجيل الخروج</button><span>يمكنك تسجيل الدخول مرة أخرى في أي وقت.</span></div>
+    </main>
+    <script src="js/courses-data.js?v=6"></script>
+    <script src="js/grade-selector.js?v=2"></script>
+    <script src="js/physics-ui.js?v=30"></script>
+    <script src="js/learning-data.js?v=3"></script>
+    <script src="js/profile.js?v=5"></script>
+    <script src="js/profile-enhancements.js?v=1"></script>
+</body>
+</html>

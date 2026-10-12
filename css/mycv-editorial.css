@@ -1,0 +1,1426 @@
+:root {
+    --editorial-paper: #F3F3F2;
+    --editorial-ink: #111111;
+    --editorial-muted: #777873;
+    --editorial-line: #DFDFDC;
+    --editorial-lime: #DFFF00;
+    --editorial-night: #111210;
+    --editorial-night-muted: #A5A69F;
+    --primary-dark: var(--editorial-paper);
+    --secondary-bg: #EBEBE8;
+    --primary-blue: #E8E8E5;
+    --accent-cyan: var(--editorial-lime);
+    --accent-teal: var(--editorial-lime);
+    --warm-accent: var(--editorial-lime);
+    --main-text: var(--editorial-ink);
+    --secondary-text: var(--editorial-muted);
+    --border-color: var(--editorial-line);
+    --bg-light: var(--editorial-paper);
+    --text-dark: var(--editorial-ink);
+    --physics-ink: var(--editorial-ink);
+    --physics-paper: var(--editorial-paper);
+    --course-bg: var(--editorial-paper);
+    --course-panel: #F8F8F6;
+    --course-line: var(--editorial-line);
+    --course-muted: var(--editorial-muted);
+    --course-cyan: var(--editorial-ink);
+    --course-gold: var(--editorial-lime);
+    --course-green: var(--editorial-ink);
+    --primary-cyan: var(--editorial-lime);
+    --primary-gold: var(--editorial-lime);
+    --dark-bg: var(--editorial-paper);
+    --dark-secondary: #EBEBE8;
+    --dark-card: #FAFAF8;
+    --text-primary: var(--editorial-ink);
+    --text-secondary: #555650;
+    --text-muted: var(--editorial-muted);
+    --border-glass: var(--editorial-line);
+    --border-glow: var(--editorial-ink);
+    --glass-bg: rgba(255, 255, 255, .72);
+    --glass-blur: blur(16px);
+    --glass-border: 1px solid var(--editorial-line);
+    --gradient-cyan: var(--editorial-lime);
+    --gradient-gold: var(--editorial-lime);
+    --gradient-dark: linear-gradient(180deg, var(--editorial-paper), #EBEBE8);
+    --gradient-mesh: none;
+    --neon-glow: 0 8px 24px rgba(17, 17, 17, .08);
+    --gold-glow: 0 8px 24px rgba(17, 17, 17, .08);
+    --transition-smooth: all .28s cubic-bezier(.2, .7, .2, 1);
+    --transition-bounce: all .35s cubic-bezier(.2, .7, .2, 1);
+    color-scheme: light;
+}
+
+body[data-theme="light"] {
+    --editorial-paper: #F3F3F2;
+    --editorial-ink: #111111;
+    --editorial-muted: #777873;
+    --editorial-line: #DFDFDC;
+    --editorial-night: #111210;
+    --primary-dark: var(--editorial-paper);
+    --secondary-bg: #EBEBE8;
+    --main-text: var(--editorial-ink);
+    --secondary-text: var(--editorial-muted);
+    --border-color: var(--editorial-line);
+    --course-bg: var(--editorial-paper);
+    --course-panel: #F8F8F6;
+    --course-line: var(--editorial-line);
+    --course-muted: var(--editorial-muted);
+    --course-cyan: var(--editorial-ink);
+    --course-gold: var(--editorial-lime);
+    --text-primary: var(--editorial-ink);
+    --text-secondary: #555650;
+    --text-muted: var(--editorial-muted);
+    --border-glass: var(--editorial-line);
+    color-scheme: light;
+}
+
+body[data-theme="dark"] {
+    --editorial-paper: #191A17;
+    --editorial-ink: #F3F3F2;
+    --editorial-muted: #A5A69F;
+    --editorial-line: #383934;
+    --editorial-night: #0C0D0B;
+    --primary-dark: var(--editorial-paper);
+    --secondary-bg: #22231F;
+    --primary-blue: #22231F;
+    --main-text: var(--editorial-ink);
+    --secondary-text: var(--editorial-muted);
+    --border-color: var(--editorial-line);
+    --physics-ink: var(--editorial-ink);
+    --physics-paper: var(--editorial-paper);
+    --course-bg: var(--editorial-paper);
+    --course-panel: #22231F;
+    --course-line: var(--editorial-line);
+    --course-muted: var(--editorial-muted);
+    --course-cyan: var(--editorial-ink);
+    --course-gold: var(--editorial-lime);
+    --primary-cyan: var(--editorial-lime);
+    --primary-gold: var(--editorial-lime);
+    --dark-bg: var(--editorial-paper);
+    --dark-secondary: #22231F;
+    --dark-card: #22231F;
+    --text-primary: var(--editorial-ink);
+    --text-secondary: var(--editorial-muted);
+    --text-muted: #85867F;
+    --border-glass: var(--editorial-line);
+    --glass-bg: rgba(255, 255, 255, .035);
+    --gradient-cyan: var(--editorial-lime);
+    --gradient-gold: var(--editorial-lime);
+    --gradient-dark: linear-gradient(180deg, #191A17, #111210);
+    color-scheme: dark;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+    scrollbar-color: #85867F var(--editorial-paper);
+    scrollbar-width: thin;
+}
+body[data-theme="dark"] .courses-page .course-card,
+body[data-theme="dark"] .courses-page .course-panel { background: #22231F !important; }
+
+html::-webkit-scrollbar-track { background: var(--editorial-paper); }
+html::-webkit-scrollbar-thumb { border-color: var(--editorial-paper); background: #85867F; }
+html::-webkit-scrollbar-thumb:hover { background: var(--editorial-ink); }
+
+body,
+html[data-theme="light"] body,
+body.theme-light,
+body.home-page,
+body.physics-page,
+body.courses-page,
+body.physics-page-shell,
+body.login-page,
+body.profile-page {
+    background: var(--editorial-paper) !important;
+    background-image: none !important;
+    color: var(--editorial-ink) !important;
+    font-family: 'Cairo', 'Inter', Arial, sans-serif !important;
+    cursor: auto !important;
+}
+body[data-theme="dark"] .home-section#contact-details { background: var(--editorial-night) !important; }
+
+#hero-particles,
+.hero-particles,
+.site-atmosphere,
+#cursor-glow,
+#theme-toggle,
+#theme-switch,
+.theme-toggle { display: none !important; }
+
+body::before,
+body::after {
+    background-image: none !important;
+    box-shadow: none !important;
+}
+body[data-theme="dark"] .physics-system-picker select,
+body[data-theme="dark"] .course-filters select,
+body[data-theme="dark"] .course-search input,
+body[data-theme="dark"] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+body[data-theme="dark"] textarea,
+body[data-theme="dark"] select {
+    background-color: #22231F !important;
+    color: var(--editorial-ink) !important;
+}
+
+body::before { opacity: 0 !important; }
+
+.courses-page::before, .physics-page::before { display: none !important; }
+
+::selection { background: var(--editorial-lime); color: var(--editorial-ink); }
+
+a, button, input, select, textarea {
+    font-family: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--editorial-ink) !important;
+    outline-offset: 4px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--editorial-ink);
+    font-family: 'Cairo', 'Space Grotesk', Arial, sans-serif;
+    letter-spacing: -.035em;
+}
+
+p { color: var(--editorial-muted); }
+
+.custom-cursor {
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 99998;
+    display: none;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+.cursor-dot, .cursor-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+.cursor-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--editorial-ink);
+}
+.cursor-ring {
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(17, 17, 17, .55);
+    transition: width .22s ease, height .22s ease, background-color .22s ease, border-color .22s ease;
+}
+.custom-cursor.is-hovering .cursor-ring {
+    width: 48px;
+    height: 48px;
+    border-color: var(--editorial-ink);
+    background: rgba(223, 255, 0, .28);
+}
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    body.site-loaded .custom-cursor { display: block; opacity: 1; }
+}
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+    .custom-cursor { display: none !important; }
+}
+.site-preloader { background: var(--editorial-paper) !important; color: var(--editorial-ink) !important; }
+.site-preloader-label { color: var(--editorial-muted) !important; font-family: 'Space Grotesk', monospace !important; letter-spacing: .14em !important; }
+.site-preloader-inner strong { color: var(--editorial-ink) !important; font-family: Georgia, serif !important; }
+.site-preloader-line { background: var(--editorial-line) !important; }
+.site-preloader-line > * { background: var(--editorial-lime) !important; }
+
+/* Shared editorial navigation */
+.site-header {
+    position: fixed !important;
+    inset: 0 0 auto !important;
+    z-index: 1000 !important;
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    min-height: 82px !important;
+    padding: 18px clamp(20px, 4vw, 56px) !important;
+    border: 0 !important;
+    background: rgba(243, 243, 242, .9) !important;
+    color: var(--editorial-ink) !important;
+    direction: ltr;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    mix-blend-mode: normal !important;
+}
+
+.site-header:has(.site-nav.is-open) {
+    z-index: 1400 !important;
+    background: transparent !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.site-logo { gap: 10px !important; color: var(--editorial-ink) !important; }
+.site-logo-mark { font: 800 1.9rem/1 'Space Grotesk', sans-serif !important; letter-spacing: -.08em !important; }
+.site-logo-mark b { color: var(--editorial-ink) !important; }
+.site-logo-copy strong { color: var(--editorial-ink) !important; font: 700 1.1rem/1.05 'Space Grotesk', sans-serif !important; }
+.site-logo-copy small { color: var(--editorial-muted) !important; font: 9px/1.2 'Space Grotesk', monospace !important; letter-spacing: .08em !important; }
+.site-actions { gap: 8px !important; }
+.site-header:has(.site-nav.is-open) .site-logo,
+.site-header:has(.site-nav.is-open) .site-actions { position: relative; z-index: 3; }
+.site-header:has(.site-nav.is-open) .site-logo,
+.site-header:has(.site-nav.is-open) .site-logo-copy strong,
+.site-header:has(.site-nav.is-open) .site-logo-copy small { color: var(--editorial-paper) !important; }
+.site-header:has(.site-nav.is-open) .site-search-toggle,
+.site-header:has(.site-nav.is-open) .site-menu-toggle,
+.site-header:has(.site-nav.is-open) .site-login {
+    border-color: rgba(243, 243, 242, .7) !important;
+    color: var(--editorial-ink) !important;
+}
+.site-search-toggle, .site-menu-toggle {
+    display: grid !important;
+    width: 42px !important;
+    height: 42px !important;
+    place-items: center;
+    border: 1px solid var(--editorial-ink) !important;
+    border-radius: 50% !important;
+    background: transparent !important;
+    color: var(--editorial-ink) !important;
+}
+.site-search-toggle:hover, .site-menu-toggle:hover { background: var(--editorial-lime) !important; color: var(--editorial-ink) !important; }
+.site-login {
+    min-height: 40px;
+    padding: 9px 14px !important;
+    border: 1px solid var(--editorial-ink) !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: var(--editorial-ink) !important;
+    font: 600 10px/1 'Space Grotesk', sans-serif !important;
+    letter-spacing: .06em;
+}
+.site-login:hover { background: var(--editorial-lime) !important; border-color: var(--editorial-ink) !important; }
+.site-nav { display: none !important; }
+.site-menu-toggle { display: grid !important; }
+.site-nav.is-open {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: clamp(2px, 1.2vh, 12px) !important;
+    padding: 92px clamp(25px, 9vw, 130px) 40px !important;
+    overflow: auto;
+    background: var(--editorial-ink) !important;
+    color: var(--editorial-paper) !important;
+}
+.site-nav.is-open::before {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: repeating-radial-gradient(ellipse at 80% 50%, transparent 0 72px, rgba(223, 255, 0, .1) 73px 74px, transparent 75px 124px);
+    content: '';
+    pointer-events: none;
+}
+.site-nav.is-open a {
+    position: relative;
+    padding: 3px 0 !important;
+    color: var(--editorial-paper) !important;
+    font: 700 clamp(2.2rem, 7vw, 6rem)/1 'Cairo', 'Space Grotesk', sans-serif !important;
+    letter-spacing: -.04em;
+    transition: color .22s ease, transform .22s ease;
+    animation: menu-link-enter .48s cubic-bezier(.2, .7, .2, 1) both;
+    animation-delay: calc(var(--menu-link-index, 0) * 45ms);
+}
+.site-nav.is-open a::after { display: none !important; }
+.site-nav.is-open a:hover, .site-nav.is-open a[aria-current="page"] { color: var(--editorial-lime) !important; transform: translateX(-7px); }
+.site-search-panel {
+    z-index: 1300 !important;
+    top: 92px !important;
+    right: clamp(16px, 4vw, 56px) !important;
+    border: 1px solid var(--editorial-line) !important;
+    border-radius: 2px !important;
+    background: var(--editorial-paper) !important;
+    box-shadow: 0 20px 60px rgba(17, 17, 17, .16) !important;
+}
+.site-search-form input {
+    border-color: var(--editorial-line) !important;
+    border-radius: 0 !important;
+    background: white !important;
+    color: var(--editorial-ink) !important;
+}
+.site-search-results a { color: var(--editorial-ink) !important; border-radius: 0 !important; }
+.site-search-results a:hover { background: rgba(223, 255, 0, .32) !important; }
+.site-search-results small, .site-search-hint { color: var(--editorial-muted) !important; }
+
+/* Shared page frame, typography and content surfaces */
+.physics-home,
+.courses-page,
+.physics-page,
+.courses-shell,
+.physics-page-shell,
+.site-page-main {
+    background: var(--editorial-paper) !important;
+    color: var(--editorial-ink) !important;
+}
+
+.courses-shell, .physics-page-shell, .site-page-main {
+    padding-top: 122px !important;
+}
+
+.courses-hero, .course-detail-hero { padding-top: 38px !important; }
+.courses-kicker, .home-section-kicker, .about-eyebrow, .auth-kicker {
+    color: var(--editorial-muted) !important;
+    font: 600 .7rem/1.5 'Space Grotesk', 'Cairo', monospace !important;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+.courses-hero h1, .course-detail-hero h1, .physics-page-shell > section h1, .site-page-main h1 {
+    color: var(--editorial-ink) !important;
+    font-size: clamp(2.2rem, 6vw, 5.5rem) !important;
+    font-weight: 800 !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.045em !important;
+}
+.courses-hero p, .course-detail-hero p, .physics-page-shell > section > p, .site-page-main > section > p {
+    max-width: 760px;
+    color: var(--editorial-muted) !important;
+    line-height: 1.9 !important;
+}
+.courses-page h1, .courses-page h2, .courses-page h3,
+.physics-page h1, .physics-page h2, .physics-page h3 { color: var(--editorial-ink) !important; }
+
+.course-card, .course-panel, .course-unit, .lesson-card, .exam-item,
+.notes-editor, .note-card, .profile-card, .profile-panel, .profile-stat,
+.login-card, .auth-card, .physics-system-picker, .grade-card,
+.home-feature-card, .about-spotlight, .about-portrait {
+    border: 1px solid var(--editorial-line) !important;
+    border-radius: 2px !important;
+    background: rgba(255, 255, 255, .58) !important;
+    color: var(--editorial-ink) !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+}
+
+.course-card, .lesson-card, .exam-item, .note-card, .profile-stat,
+.grade-card, .home-feature-card {
+    transition: transform .3s cubic-bezier(.2, .7, .2, 1), border-color .3s ease, background-color .3s ease !important;
+}
+.course-card:hover, .lesson-card:hover, .exam-item:hover, .note-card:hover,
+.grade-card:hover, .home-feature-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--editorial-ink) !important;
+    background: rgba(223, 255, 0, .16) !important;
+}
+
+.course-card p, .course-card span, .course-panel p, .exam-item p,
+.profile-card p, .about-spotlight p { color: var(--editorial-muted) !important; }
+.course-card i, .course-panel i, .about-eyebrow i { color: var(--editorial-ink) !important; }
+.course-grid, .home-feature-grid, .grade-grid { gap: 0 !important; }
+.course-grid > *, .home-feature-grid > *, .grade-grid > * { margin: 0 0 -1px -1px; }
+.courses-page .course-card {
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: #F8F8F6 !important;
+    color: var(--editorial-ink) !important;
+}
+.courses-page .course-card:hover { border-color: var(--editorial-ink) !important; }
+.courses-page .course-art {
+    position: relative;
+    min-height: 168px;
+    margin: 0 0 18px;
+    overflow: hidden;
+    background: var(--editorial-night) !important;
+}
+.courses-page .course-art img {
+    width: 100%;
+    height: 168px;
+    object-fit: cover;
+    filter: grayscale(1) contrast(.9) brightness(.66) !important;
+    transition: transform .6s ease, filter .6s ease;
+}
+.courses-page .course-card:hover .course-art img {
+    transform: scale(1.04);
+    filter: grayscale(.35) contrast(.95) brightness(.8) !important;
+}
+.courses-page .course-art::after {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(17, 18, 16, .64), transparent 68%);
+    content: '';
+    pointer-events: none;
+}
+.courses-page .course-art figcaption { position: absolute; inset: auto 14px 12px; z-index: 1; color: var(--editorial-paper) !important; }
+.courses-page .course-art code { color: var(--editorial-lime) !important; }
+body[data-theme="dark"] .courses-page .course-art figcaption { color: #F3F3F2 !important; }
+.courses-page .course-card-head,
+.courses-page .physics-course-chip,
+.courses-page .course-card h2,
+.courses-page .course-card > p,
+.courses-page .course-meta,
+.courses-page .course-card-action { margin-right: 20px !important; margin-left: 20px !important; }
+.courses-page .course-card-head { margin-top: 0 !important; }
+.courses-page .course-icon {
+    width: 38px !important;
+    height: 38px !important;
+    border: 1px solid var(--editorial-ink) !important;
+    border-radius: 50% !important;
+    background: var(--editorial-paper) !important;
+    color: var(--editorial-ink) !important;
+}
+.courses-page .course-status,
+.courses-page .physics-course-chip {
+    border-color: var(--editorial-line) !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: var(--editorial-muted) !important;
+}
+.courses-page .course-card h2 { margin-top: 18px !important; color: var(--editorial-ink) !important; }
+.courses-page .course-card p { color: var(--editorial-muted) !important; }
+.courses-page .course-meta { color: var(--editorial-muted) !important; }
+.courses-page .course-meta i { color: var(--editorial-ink) !important; }
+.courses-page .course-card-action {
+    margin-top: auto !important;
+    padding-top: 14px !important;
+    padding-bottom: 18px;
+    border-color: var(--editorial-line) !important;
+    color: var(--editorial-ink) !important;
+}
+.courses-page .course-card-action i { color: var(--editorial-ink) !important; }
+.courses-page .course-panel { border-radius: 0 !important; background: #F8F8F6 !important; }
+.courses-page .detail-stat { border-radius: 0 !important; background: transparent !important; }
+.courses-page .detail-stat strong, .courses-page .material-link small { color: var(--editorial-ink) !important; }
+.courses-page .course-unit { border-radius: 0 !important; background: transparent !important; }
+.courses-page .material-link { border-radius: 0 !important; background: rgba(17, 17, 17, .035) !important; color: var(--editorial-ink) !important; }
+.courses-page .material-link:hover { background: rgba(223, 255, 0, .22) !important; color: var(--editorial-ink) !important; }
+
+button, .physics-button, .start-learning, .auth-required-button,
+.welcome-auth-login, .welcome-auth-skip {
+    border-radius: 999px !important;
+    box-shadow: none !important;
+    transition: transform .24s ease, background-color .24s ease, color .24s ease, border-color .24s ease !important;
+}
+.physics-button, .start-learning, .auth-required-button, .welcome-auth-login {
+    border: 1px solid var(--editorial-ink) !important;
+    background: var(--editorial-lime) !important;
+    color: var(--editorial-ink) !important;
+}
+.physics-button:hover, .start-learning:hover, .auth-required-button:hover, .welcome-auth-login:hover {
+    transform: translateY(-2px);
+    background: var(--editorial-ink) !important;
+    color: var(--editorial-paper) !important;
+}
+.physics-system-picker {
+    display: grid;
+    border-radius: 0 !important;
+    background: transparent !important;
+}
+.physics-system-picker label, .course-filters label { color: var(--editorial-muted) !important; }
+.physics-system-picker select, .course-filters select, .course-search input,
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+textarea, select {
+    border: 1px solid var(--editorial-line) !important;
+    border-radius: 0 !important;
+    background-color: rgba(255, 255, 255, .78) !important;
+    color: var(--editorial-ink) !important;
+}
+
+.site-header ~ main,
+.site-header + main { min-height: 100vh; }
+.physics-socials a, .physics-email-pending {
+    border-color: var(--editorial-line) !important;
+    border-radius: 999px !important;
+    background: transparent !important;
+    color: var(--editorial-ink) !important;
+}
+.physics-socials a:hover { border-color: var(--editorial-ink) !important; background: var(--editorial-lime) !important; }
+.physics-home footer {
+    border-top: 1px solid var(--editorial-line) !important;
+    background: var(--editorial-ink) !important;
+    color: rgba(243, 243, 242, .64) !important;
+    text-align: left !important;
+}
+.physics-home footer strong { color: var(--editorial-paper) !important; }
+body[data-theme="dark"] .physics-home footer { background: var(--editorial-night) !important; }
+
+/* Editorial learning homepage */
+body.home-page { background: var(--editorial-paper) !important; }
+.physics-home { padding-top: 0 !important; }
+.home-hero {
+    min-height: 100svh !important;
+    padding: 112px clamp(24px, 8vw, 116px) 78px !important;
+    background: #050a10 url('../assets/photo_2026-10-11_20-58-53.jpg') center center / cover no-repeat !important;
+    isolation: isolate;
+}
+.home-hero::before {
+    z-index: 0 !important;
+    background: linear-gradient(90deg, rgba(5, 10, 16, .72) 0%, rgba(5, 10, 16, .42) 43%, rgba(5, 10, 16, .08) 76%, rgba(5, 10, 16, .18) 100%), linear-gradient(0deg, rgba(5, 10, 16, .3), transparent 36%) !important;
+    opacity: 1 !important;
+}
+.home-hero::after {
+    display: none;
+}
+.home-hero .hero-copy {
+    position: absolute !important;
+}
+.hero-copy {
+    top: 50% !important;
+    left: clamp(28px, 9vw, 130px) !important;
+    width: min(530px, 51vw) !important;
+    transform: translateY(-50%);
+    color: #f3f3f2 !important;
+}
+.hero-welcome {
+    gap: 11px !important;
+    color: #f3f3f2 !important;
+    font: 600 .72rem/1.4 'Space Grotesk', monospace !important;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+.hero-welcome::before { background: #ffad19 !important; }
+.hero-copy h1 {
+    max-width: 700px;
+    margin: 14px 0 4px !important;
+    color: #f3f3f2 !important;
+    font: 800 clamp(3.2rem, 8.3vw, 8rem)/.95 'Cairo', 'Space Grotesk', sans-serif !important;
+    letter-spacing: -.055em !important;
+}
+.hero-copy h1 .hero-mark { color: #ffad19 !important; }
+.hero-copy h1 .hero-mark sup {
+    display: inline-block;
+    position: relative;
+    top: -.12em;
+    font-size: .44em;
+    line-height: 0;
+    vertical-align: super;
+}
+.hero-byline {
+    margin: 5px 0 23px !important;
+    color: rgba(243, 243, 242, .82) !important;
+    font: 500 clamp(1.05rem, 2vw, 1.45rem)/1.4 'Cairo', sans-serif !important;
+    letter-spacing: 0 !important;
+}
+.hero-quote {
+    max-width: 390px !important;
+    margin-bottom: 26px !important;
+    padding-left: 14px !important;
+    border-color: var(--editorial-lime) !important;
+    color: rgba(243, 243, 242, .86) !important;
+    font: 500 clamp(1rem, 1.6vw, 1.28rem)/1.5 'Cairo', sans-serif !important;
+}
+.start-learning {
+    min-height: 48px;
+    padding: 13px 20px !important;
+    border-color: rgba(255, 255, 255, .2) !important;
+    background: linear-gradient(135deg, #ffb21a, #ff9900) !important;
+    color: #11151b !important;
+    font: 700 .8rem/1 'Space Grotesk', 'Cairo', sans-serif !important;
+    letter-spacing: .045em;
+    box-shadow: 0 8px 24px rgba(255, 165, 0, .2) !important;
+}
+.hero-instructor {
+    top: auto !important;
+    left: auto !important;
+    right: clamp(24px, 12vw, 154px) !important;
+    bottom: 0 !important;
+    width: clamp(310px, 36vw, 500px) !important;
+    height: 94% !important;
+    max-height: none;
+    aspect-ratio: auto !important;
+    filter: none !important;
+    transform: none !important;
+}
+.hero-instructor img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    filter: drop-shadow(0 18px 28px rgba(0, 0, 0, .38)) !important;
+}
+.hero-formula {
+    z-index: 2 !important;
+    color: var(--editorial-muted) !important;
+    font: 500 clamp(.85rem, 1.4vw, 1.1rem)/1.2 'Caveat', cursive !important;
+}
+.hero-scroll {
+    z-index: 4;
+    right: clamp(24px, 4.5vw, 64px) !important;
+    bottom: 45px !important;
+    color: rgba(243, 243, 242, .82) !important;
+    font: 500 .62rem 'Space Grotesk', monospace !important;
+}
+
+.hero-scroll-sequence.is-cinematic { height: 520svh; }
+.hero-scroll-sequence.is-cinematic + .course-rail-sequence { margin-top: -100svh; }
+.hero-scroll-sequence.is-cinematic .home-hero {
+    position: relative !important;
+    height: 100svh !important;
+    min-height: 100svh !important;
+    overflow: hidden;
+}
+.hero-scroll-sequence.is-cinematic .home-hero.is-pinned {
+    position: fixed !important;
+    inset: 0 auto auto 0;
+    z-index: 10;
+    width: 100%;
+}
+.hero-scroll-sequence.is-cinematic .home-hero.is-released {
+    position: absolute !important;
+    inset: auto 0 0;
+    width: 100%;
+}
+.hero-scroll-sequence.is-cinematic .home-hero.is-card-settled .hero-cinematic {
+    border: 1px solid rgba(243, 243, 242, .2);
+}
+.hero-scroll-sequence.is-cinematic .hero-copy { opacity: var(--hero-text-opacity, 1); }
+.hero-scroll-sequence.is-cinematic .hero-instructor { opacity: var(--hero-image-opacity, 1); }
+.hero-scroll-sequence.is-cinematic .home-hero > .hero-copy,
+.hero-scroll-sequence.is-cinematic .home-hero > .hero-scroll,
+.hero-scroll-sequence.is-cinematic .home-hero > .hero-instructor,
+.hero-scroll-sequence.is-cinematic .home-hero > .hero-monogram,
+.hero-scroll-sequence.is-cinematic .home-hero > .hero-cinematic { animation: none !important; }
+.hero-scroll-sequence.is-cinematic .hero-cinematic,
+.hero-scroll-sequence.is-cinematic .hero-cinematic *,
+.hero-scroll-sequence.is-cinematic .hero-monogram {
+    transition: none !important;
+}
+.hero-cinematic {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    overflow: hidden;
+    background: transparent;
+    color: var(--editorial-lime);
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: center;
+    will-change: opacity, transform, border-radius;
+}
+.hero-cinematic::before {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: #10110e;
+    content: "";
+    opacity: var(--hero-screen-opacity, 0);
+    pointer-events: none;
+}
+.hero-cinematic > * { z-index: 1; }
+.hero-cinematic-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: rgba(255, 255, 255, .045);
+    font: 800 clamp(2.1rem, 7vw, 6rem)/1 'Space Grotesk', sans-serif;
+    letter-spacing: .12em;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+}
+.hero-cinematic-welcome {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    width: min(86%, 620px);
+    color: var(--editorial-lime);
+    font: 800 clamp(1.35rem, 4vw, 3rem)/1.45 'Cairo', sans-serif;
+    text-align: center;
+    text-wrap: balance;
+    text-shadow: 0 0 18px rgba(223, 255, 0, .38);
+    transform: translateX(-50%);
+    opacity: 0;
+}
+.hero-cinematic-watermark { opacity: 0; }
+.home-hero.is-card-settled .hero-cinematic-watermark { opacity: 1; }
+.hero-cinematic-portrait {
+    position: absolute;
+    left: 50%;
+    bottom: 12%;
+    width: min(48vw, 500px);
+    height: 45%;
+    opacity: 0;
+    transform: translateX(-50%);
+}
+.hero-slice {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 88%, rgba(0, 0, 0, .78) 93%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 88%, rgba(0, 0, 0, .78) 93%, transparent 100%);
+}
+.hero-slice-top { clip-path: inset(0 0 66.6%); }
+.hero-slice-middle { clip-path: inset(33.3% 0 33.3%); }
+.hero-slice-bottom { clip-path: inset(66.6% 0 0); }
+.hero-cinematic-meta {
+    position: absolute;
+    left: clamp(20px, 6vw, 82px);
+    right: clamp(20px, 6vw, 82px);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: rgba(243, 243, 242, .66);
+    font: 600 .62rem/1.4 'Space Grotesk', 'Cairo', sans-serif;
+    letter-spacing: .12em;
+}
+.hero-cinematic-meta-top { top: 9%; }
+.hero-cinematic-meta-bottom { bottom: 8%; align-items: baseline; }
+.hero-cinematic-meta-bottom strong {
+    color: var(--editorial-paper);
+    font: 700 clamp(1.2rem, 2.4vw, 2rem)/1 'Cairo', sans-serif;
+    letter-spacing: .04em;
+}
+.hero-monogram {
+    position: absolute;
+    inset: 0;
+    z-index: 7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .06em;
+    color: var(--editorial-ink);
+    font: 900 clamp(6rem, 13vw, 11rem)/.8 Georgia, serif;
+    letter-spacing: -.08em;
+    opacity: 0;
+    pointer-events: none;
+    transform-origin: center;
+    will-change: opacity, transform;
+}
+.hero-monogram b {
+    display: inline-grid;
+    width: 1.12em;
+    height: 1.12em;
+    place-items: center;
+    border-radius: .16em;
+    background: var(--editorial-ink);
+    color: var(--editorial-lime);
+    font: inherit;
+    font-size: .72em;
+}
+
+.home-hero.is-animating .hero-welcome,
+.home-hero.is-animating .hero-copy h1,
+.home-hero.is-animating .hero-byline,
+.home-hero.is-animating .hero-quote,
+.home-hero.is-animating .start-learning,
+.home-hero.is-animating .hero-scroll {
+    animation: hero-copy-enter .72s cubic-bezier(.2, .7, .2, 1) both;
+}
+.home-hero.is-animating .hero-welcome { animation-delay: 80ms; }
+.home-hero.is-animating .hero-copy h1 { animation-delay: 180ms; }
+.home-hero.is-animating .hero-byline { animation-delay: 280ms; }
+.home-hero.is-animating .hero-quote { animation-delay: 360ms; }
+.home-hero.is-animating .start-learning { animation-delay: 440ms; }
+.home-hero.is-animating .hero-scroll { animation-delay: 600ms; }
+.home-hero.is-animating .hero-instructor img {
+    animation: hero-image-enter .9s cubic-bezier(.2, .7, .2, 1) 160ms both;
+}
+
+@keyframes hero-copy-enter {
+    from { opacity: 0; translate: 0 20px; }
+    to { opacity: 1; translate: 0 0; }
+}
+@keyframes hero-image-enter {
+    from { opacity: 0; clip-path: inset(0 0 100% 0); }
+    to { opacity: 1; clip-path: inset(0); }
+}
+@keyframes menu-link-enter {
+    from { opacity: 0; translate: 0 18px; }
+    to { opacity: 1; translate: var(--menu-link-shift, 0px) 0; }
+}
+
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .course-card[data-tilt-card],
+    .lesson-card[data-tilt-card],
+    .exam-item[data-tilt-card],
+    .grade-card[data-tilt-card],
+    .home-feature-card[data-tilt-card] {
+        transform-style: preserve-3d;
+        will-change: transform;
+    }
+    .is-tilting[data-tilt-card] {
+        transform: perspective(900px) rotateX(var(--card-tilt-x, 0deg)) rotateY(var(--card-tilt-y, 0deg)) translateY(-3px);
+    }
+    .start-learning {
+        translate: var(--magnetic-x, 0px) var(--magnetic-y, 0px);
+        transition: translate .22s cubic-bezier(.2, .7, .2, 1), transform .24s ease, background-color .24s ease, color .24s ease !important;
+    }
+}
+
+.feature-marquee-track { animation: editorial-marquee 28s linear infinite; }
+.feature-marquee:hover .feature-marquee-track,
+.feature-marquee:focus-within .feature-marquee-track { animation-play-state: paused; }
+@keyframes editorial-marquee {
+    to { transform: translateX(-50%); }
+}
+.hero-scroll::after { height: 46px !important; background: linear-gradient(var(--editorial-lime), transparent) !important; }
+.hero-scroll i { color: var(--editorial-lime) !important; }
+
+.course-rail-sequence {
+    position: relative;
+    min-height: 100svh;
+    background: #11110f;
+    color: var(--editorial-paper);
+}
+.course-rail-sequence.is-course-rail-active { min-height: 0; }
+.course-rail-stage {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 680px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 78% 52%, rgba(223, 255, 0, .07), transparent 36%),
+        #11110f;
+}
+.course-rail-sequence.is-pinned .course-rail-stage {
+    position: fixed;
+    inset: 0 auto auto 0;
+    z-index: 10;
+    width: 100%;
+}
+.course-rail-sequence.is-released .course-rail-stage {
+    position: absolute;
+    inset: auto 0 0;
+}
+.course-rail-heading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    padding: 34px clamp(22px, 6vw, 84px) 0;
+}
+.course-rail-topline {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-top: 11px;
+    border-top: 1px solid rgba(243, 243, 242, .3);
+    color: rgba(243, 243, 242, .62);
+    font: 600 .62rem/1.4 'Space Grotesk', monospace;
+    letter-spacing: .12em;
+}
+.course-rail-intro {
+    max-width: 620px;
+    margin: 40px 0 0 auto;
+    text-align: right;
+}
+.course-rail-intro .home-section-kicker { color: rgba(243, 243, 242, .55) !important; }
+.course-rail-intro h2 {
+    margin: 10px 0 8px;
+    color: var(--editorial-paper);
+    font: 800 clamp(2rem, 4.5vw, 4.2rem)/1.05 'Cairo', sans-serif;
+    letter-spacing: -.04em;
+}
+.course-rail-intro p {
+    margin: 0;
+    color: rgba(243, 243, 242, .63);
+    font: 400 clamp(.85rem, 1.2vw, 1rem)/1.7 'Cairo', sans-serif;
+}
+.course-rail-track {
+    position: absolute;
+    top: 51%;
+    left: 0;
+    display: flex;
+    width: max-content;
+    gap: 18px;
+    padding: 0 clamp(22px, 6vw, 84px);
+    transition: none !important;
+    will-change: transform;
+}
+.course-rail-card {
+    position: relative;
+    display: flex;
+    flex: 0 0 min(62vw, 560px);
+    min-height: 330px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(22px, 3vw, 38px);
+    border: 1px solid rgba(243, 243, 242, .24);
+    background: #20211e;
+    color: var(--editorial-paper) !important;
+    text-decoration: none !important;
+    transform: translateY(0);
+    transition: background-color .3s ease, color .3s ease, border-color .3s ease, transform .3s cubic-bezier(.2, .7, .2, 1);
+}
+.course-rail-card:hover,
+.course-rail-card:focus-visible {
+    transform: translateY(-8px);
+    border-color: var(--editorial-lime);
+    background: var(--editorial-paper);
+    color: var(--editorial-ink) !important;
+}
+.course-rail-card-number,
+.course-rail-card-kicker,
+.course-rail-card-meta,
+.course-rail-card-action {
+    font: 600 .63rem/1.5 'Space Grotesk', 'Cairo', sans-serif;
+    letter-spacing: .1em;
+}
+.course-rail-card-number {
+    align-self: flex-end;
+    color: rgba(243, 243, 242, .48);
+}
+.course-rail-card-icon {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    margin: 22px 0 26px;
+    place-items: center;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    color: var(--editorial-lime);
+    font-size: 1.1rem;
+}
+.course-rail-card:hover .course-rail-card-icon,
+.course-rail-card:focus-visible .course-rail-card-icon { color: var(--editorial-ink); }
+.course-rail-card-kicker { color: rgba(243, 243, 242, .58); }
+.course-rail-card:hover .course-rail-card-kicker,
+.course-rail-card:focus-visible .course-rail-card-kicker { color: var(--editorial-muted); }
+.course-rail-card h3 {
+    max-width: 100%;
+    margin: 9px 0 8px;
+    color: inherit;
+    font: 800 clamp(1.3rem, 2.5vw, 2.25rem)/1.3 'Cairo', sans-serif;
+    letter-spacing: -.03em;
+}
+.course-rail-card p {
+    margin: 0;
+    color: rgba(243, 243, 242, .58);
+    font: 400 .9rem/1.6 'Cairo', sans-serif;
+}
+.course-rail-card:hover p,
+.course-rail-card:focus-visible p { color: var(--editorial-muted); }
+.course-rail-card-meta {
+    margin-top: auto;
+    padding-top: 22px;
+    color: rgba(243, 243, 242, .55);
+    letter-spacing: .03em;
+}
+.course-rail-card:hover .course-rail-card-meta,
+.course-rail-card:focus-visible .course-rail-card-meta { color: var(--editorial-muted); }
+.course-rail-card-meta i { padding: 0 7px; color: var(--editorial-lime); font-style: normal; }
+.course-rail-card-action {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 17px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(243, 243, 242, .18);
+    color: var(--editorial-paper);
+    letter-spacing: .03em;
+}
+.course-rail-card:hover .course-rail-card-action,
+.course-rail-card:focus-visible .course-rail-card-action { border-color: var(--editorial-line); color: var(--editorial-ink); }
+.course-rail-card-action i { color: var(--editorial-lime); }
+.course-rail-progress {
+    position: absolute;
+    right: clamp(22px, 6vw, 84px);
+    bottom: 30px;
+    left: clamp(22px, 6vw, 84px);
+    height: 2px;
+    overflow: hidden;
+    background: rgba(243, 243, 242, .2);
+}
+.course-rail-progress > span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--editorial-lime);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: none !important;
+}
+body:is(.hero-scroll-active, .course-rail-scroll-active) #back-to-top {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+@media (max-width: 760px) {
+    .course-rail-stage { min-height: 0; }
+    .course-rail-track { top: 44%; }
+    .course-rail-card { flex-basis: min(82vw, 420px); }
+    .course-rail-card-icon { margin: 15px 0 17px; }
+    .course-rail-progress { bottom: 8px; }
+}
+@media (min-width: 761px) and (max-height: 720px) {
+    .course-rail-stage { min-height: 0; }
+    .course-rail-track { top: 45%; }
+    .course-rail-heading { padding-top: 88px; }
+    .course-rail-intro { margin-top: 14px; }
+    .course-rail-intro h2 { font-size: clamp(1.6rem, 3.5vw, 2.7rem); }
+    .course-rail-intro p { font-size: .8rem; line-height: 1.5; }
+    .course-rail-card { min-height: 0; padding: 20px; }
+    .course-rail-card-icon { width: 40px; height: 40px; margin: 12px 0 14px; }
+    .course-rail-card h3 { font-size: clamp(1.15rem, 2vw, 1.8rem); }
+    .course-rail-card-meta { padding-top: 14px; }
+    .course-rail-progress { bottom: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .course-rail-sequence { height: auto !important; }
+    .course-rail-stage { position: relative !important; height: auto; min-height: 100svh; padding-bottom: 80px; }
+    .course-rail-sequence.is-pinned .course-rail-stage,
+    .course-rail-sequence.is-released .course-rail-stage { position: relative !important; inset: auto; }
+    .course-rail-track {
+        position: relative;
+        top: auto;
+        overflow-x: auto;
+        width: 100%;
+        margin-top: 42px;
+        padding-bottom: 18px;
+        transform: none !important;
+    }
+    .course-rail-card { flex-basis: min(78vw, 420px); }
+    .course-rail-progress { display: none; }
+}
+
+.home-section {
+    position: relative;
+    padding: clamp(72px, 9vw, 138px) clamp(22px, 8vw, 116px) !important;
+    background: var(--editorial-paper) !important;
+    color: var(--editorial-ink) !important;
+}
+.home-section:nth-of-type(even) {
+    background: #E9E9E6 !important;
+}
+body[data-theme="dark"] .home-section:nth-of-type(even) { background: #22231F !important; }
+.home-section-inner { width: min(1180px, 100%) !important; }
+.home-section-kicker { display: block; margin-bottom: 15px; }
+.home-section h2 {
+    max-width: 900px;
+    margin: 0 0 16px !important;
+    color: var(--editorial-ink) !important;
+    font: 800 clamp(2.1rem, 5.8vw, 5.2rem)/1.08 'Cairo', 'Space Grotesk', sans-serif !important;
+    letter-spacing: -.05em !important;
+}
+.home-section p { max-width: 760px; color: #5F605A !important; line-height: 1.9 !important; }
+body[data-theme="dark"] .home-section p { color: var(--editorial-muted) !important; }
+.home-section .grade-grid,
+.home-section .home-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 34px !important;
+    border-top: 1px solid var(--editorial-line);
+    border-right: 1px solid var(--editorial-line);
+}
+.home-section .home-feature-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.home-section .grade-card,
+.home-section .home-feature-card {
+    position: relative;
+    min-height: 190px;
+    padding: 25px !important;
+    border-width: 0 0 1px 1px !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    text-decoration: none;
+}
+.home-section .grade-card:hover,
+.home-section .home-feature-card:hover {
+    background: var(--editorial-lime) !important;
+    transform: none !important;
+}
+.home-section .grade-card i,
+.home-section .home-feature-card i { color: var(--editorial-ink) !important; }
+.home-section .grade-card strong,
+.home-section .home-feature-card strong {
+    color: var(--editorial-ink) !important;
+    font: 700 clamp(1.12rem, 1.8vw, 1.55rem)/1.25 'Cairo', sans-serif !important;
+}
+.home-section .grade-card span,
+.home-section .home-feature-card span { color: #65665F !important; line-height: 1.7; }
+body[data-theme="dark"] .home-section .grade-card span,
+body[data-theme="dark"] .home-section .home-feature-card span { color: var(--editorial-muted) !important; }
+.home-section .physics-system-picker {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    gap: 15px;
+    margin-top: 28px !important;
+    padding: 20px 0 0 !important;
+    border-width: 1px 0 0 !important;
+}
+.home-section .physics-system-picker select { min-height: 48px; }
+.home-section .physics-socials { margin-top: 28px; }
+.home-section .physics-socials a,
+.home-section .physics-email-pending { min-height: 42px; padding: 9px 15px; }
+.home-section#contact-details {
+    position: relative;
+    overflow: hidden;
+    min-height: 650px;
+    padding-block: clamp(76px, 9vw, 128px) !important;
+    background: #080b10 url('../assets/photo_2026-10-11_20-58-53.jpg') center 58% / cover no-repeat !important;
+    color: var(--editorial-paper) !important;
+}
+.home-section#contact-details::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(5, 8, 12, .48), rgba(5, 8, 12, .86) 42%, rgba(5, 8, 12, .92)), linear-gradient(0deg, rgba(5, 8, 12, .66), transparent 70%);
+    content: '';
+}
+.home-section#contact-details .home-section-inner {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, 100%) !important;
+}
+.home-contact-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(250px, .72fr);
+    align-items: center;
+    gap: clamp(32px, 7vw, 96px);
+}
+.home-contact-copy { max-width: 700px; }
+.home-section#contact-details .home-contact-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 8px 0 22px;
+    color: rgba(243, 243, 242, .72);
+    font: 500 .86rem/1.5 'Cairo', sans-serif;
+}
+.home-section#contact-details .home-contact-location i { color: #ffad19; }
+.home-section#contact-details .home-section-kicker,
+.home-section#contact-details h2 { color: var(--editorial-paper) !important; }
+.home-section#contact-details h2 { margin-bottom: 18px !important; }
+.home-section#contact-details p {
+    max-width: 520px;
+    margin: 0;
+    color: rgba(243, 243, 242, .76) !important;
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+}
+.home-contact-portrait {
+    position: relative;
+    display: flex;
+    min-height: 470px;
+    align-items: flex-end;
+    justify-content: center;
+    margin: -18px 0 -32px;
+}
+.home-contact-portrait::before {
+    position: absolute;
+    right: 5%;
+    bottom: 7%;
+    left: 5%;
+    height: 52%;
+    border-radius: 50%;
+    background: rgba(255, 173, 25, .14);
+    content: '';
+    filter: blur(44px);
+}
+.home-contact-portrait img {
+    position: relative;
+    display: block;
+    width: min(100%, 350px);
+    height: 470px;
+    object-fit: contain;
+    object-position: center bottom;
+    filter: drop-shadow(0 24px 34px rgba(0, 0, 0, .45));
+}
+.home-contact-portrait figcaption {
+    position: absolute;
+    right: 4%;
+    bottom: 18px;
+    left: 4%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid rgba(243, 243, 242, .3);
+    color: rgba(243, 243, 242, .72);
+    font: 600 .63rem/1.4 'Space Grotesk', sans-serif;
+    letter-spacing: .12em;
+}
+.home-section#contact-details .physics-socials a,
+.home-section#contact-details .physics-email-pending {
+    border-color: rgba(243, 243, 242, .24) !important;
+    color: var(--editorial-paper) !important;
+}
+.home-section#contact-details .physics-socials {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    max-width: 760px;
+    margin-top: 32px;
+}
+.home-section#contact-details .physics-socials a {
+    display: grid;
+    min-height: 92px;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 14px !important;
+    border: 1px solid rgba(243, 243, 242, .2) !important;
+    border-radius: 3px !important;
+    background: rgba(8, 11, 16, .42) !important;
+    color: var(--editorial-paper) !important;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: border-color .2s, background .2s, transform .2s;
+}
+.home-section#contact-details .physics-socials a > i:first-child {
+    color: #ffad19;
+    font-size: 1.25rem;
+}
+.home-section#contact-details .physics-socials a > i:last-child { color: rgba(243, 243, 242, .48); font-size: .72rem; }
+.home-section#contact-details .physics-socials a span { display: grid; gap: 3px; }
+.home-section#contact-details .physics-socials a strong { color: var(--editorial-paper); font: 700 .95rem/1.3 'Cairo', sans-serif; }
+.home-section#contact-details .physics-socials a small { color: rgba(243, 243, 242, .58); font: 400 .7rem/1.4 'Cairo', sans-serif; }
+.home-section#contact-details .physics-socials a:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 173, 25, .78) !important;
+    background: rgba(8, 11, 16, .72) !important;
+}
+
+/* Shared card and account surfaces */
+.glass-card, .glass, .glass-panel, .dashboard-card, .stat-card {
+    border: 1px solid var(--editorial-line) !important;
+    border-radius: 2px !important;
+    background: rgba(255, 255, 255, .66) !important;
+    color: var(--editorial-ink) !important;
+    box-shadow: none !important;
+}
+.text-primary, .text-white, .text-light, .text-neutral-50,
+.text-neutral-100, .text-neutral-200 { color: var(--editorial-ink) !important; }
+.text-secondary, .text-muted, .text-neutral-300, .text-neutral-400,
+.text-neutral-500, .text-neutral-600 { color: var(--editorial-muted) !important; }
+.text-accent, .text-accent-cyan, .text-accent-violet, .text-accent-pink,
+.text-gradient { color: var(--editorial-ink) !important; }
+.bg-accent-gradient, .bg-gradient-cyan, .bg-gradient-gold {
+    background: var(--editorial-lime) !important;
+    color: var(--editorial-ink) !important;
+}
+.bg-base-950, .bg-base-900, .bg-base-800, .dark-bg, .dark-section {
+    background-color: var(--editorial-paper) !important;
+    color: var(--editorial-ink) !important;
+}
+.border-glass { border-color: var(--editorial-line) !important; }
+.welcome-auth-backdrop { background: rgba(17, 17, 17, .7) !important; }
+.welcome-auth-dialog {
+    border: 1px solid var(--editorial-line) !important;
+    border-radius: 2px !important;
+    background: var(--editorial-paper) !important;
+    color: var(--editorial-ink) !important;
+    box-shadow: 0 28px 90px rgba(0, 0, 0, .22) !important;
+}
+.welcome-auth-dialog h2, .welcome-auth-dialog p { color: var(--editorial-ink) !important; }
+.welcome-auth-dialog p { color: var(--editorial-muted) !important; }
+.welcome-auth-icon { border-radius: 2px !important; background: var(--editorial-lime) !important; color: var(--editorial-ink) !important; box-shadow: none !important; }
+.welcome-auth-close { border-radius: 50% !important; background: transparent !important; color: var(--editorial-ink) !important; }
+
+@media (max-width: 800px) {
+    .site-header { min-height: 70px !important; padding: 14px 18px !important; }
+    .site-search-toggle, .site-menu-toggle { width: 38px !important; height: 38px !important; }
+    .site-login { min-height: 38px; padding: 8px 11px !important; }
+    .courses-shell, .physics-page-shell, .site-page-main { padding-top: 96px !important; }
+    .home-section#contact-details { min-height: auto; }
+    .home-contact-layout { grid-template-columns: minmax(0, 1fr) minmax(220px, .65fr); gap: 24px; }
+    .home-contact-portrait, .home-contact-portrait img { height: 380px; min-height: 380px; }
+    .home-section#contact-details .physics-socials { grid-template-columns: 1fr; }
+    .home-section#contact-details .physics-socials a { min-height: 72px; }
+    .home-hero { min-height: max(720px, 100svh) !important; padding: 100px 24px 70px !important; }
+    .home-hero .hero-copy {
+        position: absolute !important;
+        top: auto !important;
+        bottom: 98px !important;
+        left: 26px !important;
+        width: min(570px, calc(100% - 52px)) !important;
+        transform: none;
+        animation: none !important;
+    }
+    .hero-instructor {
+        top: auto !important;
+        right: -3vw !important;
+        bottom: 0 !important;
+        left: auto !important;
+        width: min(78vw, 360px) !important;
+        height: 58% !important;
+        max-height: none;
+        aspect-ratio: auto !important;
+        transform: none !important;
+    }
+    .hero-instructor img { height: 100%; object-fit: contain; object-position: center bottom; }
+    .home-hero .hero-copy { top: 104px !important; bottom: auto !important; left: 24px !important; width: min(72%, 390px) !important; }
+    .hero-copy h1 { font-size: clamp(3rem, 11vw, 5rem) !important; }
+    .hero-byline { margin-bottom: 13px !important; }
+    .hero-quote { margin-bottom: 17px !important; }
+    .hero-scroll { right: 20px !important; bottom: 30px !important; }
+    .home-section .grade-grid, .home-section .home-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .home-section .physics-system-picker { grid-template-columns: 1fr 1fr; }
+    .home-section .physics-system-picker .physics-button { grid-column: 1 / -1; }
+}
+
+@media (max-width: 520px) {
+    .site-logo-mark { font-size: 1.65rem !important; }
+    .site-logo-copy strong { font-size: 1rem !important; }
+    .site-nav.is-open { padding: 86px 24px 32px !important; }
+    .site-nav.is-open a { font-size: clamp(2rem, 12vw, 3.7rem) !important; }
+    .site-login span { display: none; }
+    .site-login { width: 38px; justify-content: center; padding: 8px !important; }
+    .home-hero { min-height: 760px !important; }
+    .home-hero::after { inset: 12px; }
+    .hero-copy { left: 20px !important; width: min(76%, 320px) !important; }
+    .hero-copy h1 { font-size: clamp(2.5rem, 11vw, 3.4rem) !important; }
+    .home-section { padding: 66px 22px !important; }
+    .home-contact-layout { grid-template-columns: 1fr; }
+    .home-contact-portrait { grid-row: 1; min-height: 300px; margin: -28px 0 0; }
+    .home-contact-portrait img { width: min(78vw, 290px); height: 300px; }
+    .home-contact-portrait figcaption { bottom: 4px; }
+    .home-contact-copy { grid-row: 2; }
+    .home-section#contact-details .home-section-kicker { margin-bottom: 10px; }
+    .home-section#contact-details .home-contact-location { margin: 0 0 16px; }
+    .home-section#contact-details .physics-socials { margin-top: 24px; }
+    .home-section .grade-grid, .home-section .home-feature-grid { grid-template-columns: 1fr; }
+    .home-section .grade-card, .home-section .home-feature-card { min-height: 145px; }
+    .home-section .physics-system-picker { grid-template-columns: 1fr; }
+    .home-section .physics-system-picker .physics-button { grid-column: auto; }
+    .site-search-panel { top: 78px !important; right: 12px !important; }
+}
+
+@media (max-width: 760px) {
+    .hero-scroll-sequence.is-cinematic .home-hero {
+        position: relative !important;
+        height: 100svh !important;
+        min-height: 100svh !important;
+    }
+    .hero-scroll-sequence.is-cinematic .home-hero.is-pinned {
+        position: fixed !important;
+        inset: 0 auto auto 0;
+    }
+    .hero-scroll-sequence.is-cinematic .home-hero.is-released {
+        position: absolute !important;
+        inset: auto 0 0;
+    }
+    .hero-cinematic-portrait { bottom: 14%; width: min(78vw, 420px); height: 46%; }
+    .hero-cinematic-welcome { top: 22%; width: 88%; font-size: clamp(1.15rem, 6vw, 1.8rem); }
+    .hero-cinematic-meta { font-size: .5rem; }
+    .hero-cinematic-meta-top { top: 7%; }
+    .hero-cinematic-meta-bottom { bottom: 6%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+    .home-hero.is-animating .hero-welcome,
+    .home-hero.is-animating .hero-copy h1,
+    .home-hero.is-animating .hero-byline,
+    .home-hero.is-animating .hero-quote,
+    .home-hero.is-animating .start-learning,
+    .home-hero.is-animating .hero-scroll,
+    .home-hero.is-animating .hero-instructor img { animation: none !important; }
+    .feature-marquee-track { animation: none !important; }
+    .hero-scroll-sequence.is-cinematic { height: auto; }
+    .hero-scroll-sequence.is-cinematic .home-hero {
+        position: relative !important;
+        height: auto !important;
+        min-height: 100svh !important;
+    }
+    .hero-cinematic, .hero-monogram { display: none !important; }
+}
+
+@media print {
+    .site-header, .site-preloader, .site-search-panel, .site-menu-toggle { display: none !important; }
+    body, main, .physics-home, .courses-page, .physics-page { background: white !important; color: black !important; }
+}

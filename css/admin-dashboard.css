@@ -1,0 +1,559 @@
+.admin-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 8% 2%, rgba(0, 212, 255, .09), transparent 32rem),
+        #080d13 !important;
+    color: #eef2f6 !important;
+}
+
+.admin-page [hidden] {
+    display: none !important;
+}
+
+.admin-shell {
+    width: min(1240px, 100%);
+    padding-top: 28px;
+}
+
+.admin-topbar,
+.admin-topbar-actions,
+.admin-brand,
+.admin-section-heading,
+.admin-form-actions,
+.admin-question-heading,
+.admin-question-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.admin-topbar {
+    margin-bottom: 42px;
+}
+
+.admin-topbar-actions {
+    justify-content: flex-end;
+}
+
+.admin-brand {
+    justify-content: flex-start;
+    color: #f3f5f7;
+    text-decoration: none;
+}
+
+.admin-brand > span:first-child {
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid rgba(255, 189, 89, .42);
+    border-radius: 14px;
+    background: rgba(255, 189, 89, .12);
+    color: #ffd084;
+    font-size: 1.25rem;
+    font-weight: 900;
+}
+
+.admin-brand > span:last-child {
+    display: grid;
+    gap: 2px;
+}
+
+.admin-brand strong {
+    font-size: .95rem;
+}
+
+.admin-brand small {
+    color: #9ba8b6;
+    font-size: .74rem;
+}
+
+.admin-topbar-actions > .physics-button {
+    width: auto;
+    min-height: 40px;
+    padding: 8px 16px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    background: rgba(255, 255, 255, .04);
+    color: #edf2f7;
+    text-decoration: none;
+}
+
+.admin-hero {
+    margin-bottom: 26px;
+}
+
+.admin-hero h1 {
+    color: #f5f7fa;
+}
+
+.admin-hero p {
+    color: #b6c0ca;
+}
+
+.admin-notice,
+.admin-panel,
+.admin-stats article {
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 17px;
+    background: rgba(15, 23, 32, .9);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, .17);
+}
+
+.admin-notice {
+    padding: 20px 24px;
+}
+
+.admin-notice h2,
+.admin-panel h2,
+.admin-panel h3 {
+    margin: 0;
+    color: #f2f5f8;
+}
+
+.admin-notice p,
+.admin-panel p {
+    margin: 7px 0 0;
+    color: #b5c0cb;
+    line-height: 1.8;
+}
+
+.admin-message {
+    min-height: 28px;
+    margin: 12px 4px;
+    color: #73ddb0;
+    line-height: 1.7;
+}
+
+.admin-message.is-error {
+    color: #ff9292;
+}
+
+.admin-message.is-success {
+    color: #73ddb0;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px 0 24px;
+}
+
+.admin-stats article {
+    display: grid;
+    gap: 8px;
+    padding: 17px 19px;
+}
+
+.admin-stats article span {
+    color: #aeb9c4;
+    font-size: .84rem;
+}
+
+.admin-stats article strong {
+    color: #ffd084;
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.admin-panel {
+    padding: clamp(20px, 3vw, 30px);
+}
+
+.admin-panel-icon {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 13px;
+    background: rgba(0, 212, 255, .12);
+    color: #70e4f3;
+    font-weight: 800;
+}
+
+#admin-seed-panel {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+}
+
+#admin-seed-panel[hidden] {
+    display: none;
+}
+
+#admin-seed-panel h2 {
+    margin-bottom: 7px;
+}
+
+#admin-seed-panel p {
+    margin: 0 0 18px;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 22px 0 16px;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 14px;
+    background: rgba(10, 16, 23, .9);
+}
+
+.admin-tabs button,
+.admin-primary,
+.admin-secondary,
+.admin-danger {
+    min-height: 42px;
+    padding: 9px 16px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    color: #eef3f7;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .16s ease, border-color .16s ease, transform .16s ease;
+}
+
+.admin-tabs button {
+    background: transparent;
+    color: #b7c1ca;
+}
+
+.admin-tabs button.is-active {
+    background: rgba(0, 212, 255, .14);
+    color: #8cebf5;
+}
+
+.admin-tab-panel[hidden],
+.admin-tab-panel[hidden] *,
+.admin-form[hidden] {
+    display: none !important;
+}
+
+.admin-work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.admin-work-grid > .admin-panel {
+    min-width: 0;
+}
+
+.admin-section-heading {
+    margin-bottom: 18px;
+}
+
+.admin-section-heading > div {
+    display: grid;
+    gap: 4px;
+}
+
+.admin-eyebrow {
+    color: #62d9e8;
+    font-size: .72rem;
+    font-weight: 700;
+}
+
+.admin-label,
+.admin-form > label,
+.admin-form-grid > label,
+.admin-resource-tools > label,
+.admin-upload-row > label,
+.admin-question > label {
+    display: grid;
+    gap: 7px;
+    color: #e8edf2;
+    font-size: .86rem;
+    font-weight: 700;
+}
+
+.admin-label {
+    margin-bottom: 8px;
+}
+
+.admin-form {
+    display: grid;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.admin-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.admin-form-grid .admin-wide {
+    grid-column: 1 / -1;
+}
+
+.admin-page :is(input, select, textarea) {
+    width: 100%;
+    min-height: 43px;
+    padding: 9px 12px;
+    border: 1px solid rgba(210, 224, 238, .2) !important;
+    border-radius: 9px !important;
+    background: rgba(255, 255, 255, .06) !important;
+    color: #f2f5f8 !important;
+    font: inherit;
+    font-size: .88rem;
+}
+
+.admin-page select option {
+    background: #101923;
+    color: #f2f5f8;
+}
+
+.admin-page textarea {
+    min-height: 78px;
+    resize: vertical;
+}
+
+.admin-page input::placeholder,
+.admin-page textarea::placeholder {
+    color: #98a5b2;
+    opacity: 1;
+}
+
+.admin-page :is(input, select, textarea):focus-visible,
+.admin-page button:focus-visible {
+    outline: 2px solid #ffd084;
+    outline-offset: 2px;
+}
+
+.admin-primary {
+    background: #ffbd59;
+    color: #19140b;
+}
+
+.admin-primary:hover {
+    background: #ffd084;
+}
+
+.admin-secondary {
+    border-color: rgba(0, 212, 255, .32);
+    background: rgba(0, 212, 255, .08);
+    color: #82e7f1;
+}
+
+.admin-secondary:hover {
+    border-color: #62d9e8;
+    background: rgba(0, 212, 255, .15);
+}
+
+.admin-danger {
+    border-color: rgba(255, 112, 112, .32);
+    background: rgba(255, 112, 112, .08);
+    color: #ff9a9a;
+}
+
+.admin-danger:hover {
+    background: rgba(255, 112, 112, .16);
+}
+
+.admin-form-actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-top: 4px;
+}
+
+.admin-lesson-panel {
+    margin-top: 16px;
+}
+
+.admin-resources {
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 13px;
+    background: rgba(4, 10, 16, .38);
+}
+
+.admin-resources h3 {
+    font-size: 1rem;
+}
+
+.admin-resource-list {
+    display: grid;
+    gap: 8px;
+    margin: 0 0 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.admin-resource-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, .035);
+}
+
+.admin-resource-list a {
+    overflow: hidden;
+    flex: 1;
+    color: #8cebf5;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-resource-list span,
+.admin-resource-empty {
+    color: #aeb9c4;
+    font-size: .76rem;
+}
+
+.admin-resource-list button,
+.admin-question-title button {
+    border: 0;
+    background: transparent;
+    color: #ff9a9a;
+    font: inherit;
+    cursor: pointer;
+}
+
+.admin-resource-tools {
+    display: grid;
+    grid-template-columns: minmax(150px, .7fr) minmax(200px, 1.3fr) auto;
+    align-items: end;
+    gap: 10px;
+}
+
+.admin-upload-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+    margin-top: 17px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.admin-upload-row > label {
+    grid-column: 1 / -1;
+    color: #bac4ce;
+    font-size: .78rem;
+}
+
+.admin-upload-row input[type="file"] {
+    height: auto;
+    min-height: 42px;
+    padding: 7px;
+}
+
+.admin-upload-row input[type="file"]::file-selector-button {
+    margin-left: 10px;
+    padding: 6px 10px;
+    border: 0;
+    border-radius: 6px;
+    background: rgba(0, 212, 255, .16);
+    color: #8cebf5;
+    font: inherit;
+    cursor: pointer;
+}
+
+.admin-question-heading {
+    margin: 6px 0 0;
+}
+
+.admin-question-heading h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.admin-questions {
+    display: grid;
+    gap: 12px;
+}
+
+.admin-question {
+    display: grid;
+    gap: 12px;
+    padding: 17px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    border-radius: 12px;
+    background: rgba(4, 10, 16, .42);
+}
+
+.admin-question-title {
+    color: #ffd084;
+}
+
+.admin-empty {
+    padding: 18px 0;
+}
+
+.admin-page :is(button, input, select, textarea):disabled {
+    cursor: not-allowed;
+    opacity: .55;
+}
+
+@media (max-width: 760px) {
+    .admin-shell {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .admin-topbar {
+        margin-bottom: 30px;
+    }
+
+    .admin-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-stats article:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .admin-work-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-resource-tools {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-resource-tools > * {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-topbar {
+        align-items: flex-start;
+    }
+
+    .admin-topbar-actions > .physics-button {
+        max-width: 112px;
+        font-size: .78rem;
+    }
+
+    .admin-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-form-grid .admin-wide {
+        grid-column: auto;
+    }
+
+    .admin-tabs button {
+        flex: 1;
+        padding-right: 8px;
+        padding-left: 8px;
+        font-size: .86rem;
+    }
+
+    .admin-upload-row {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-resource-list li {
+        flex-wrap: wrap;
+    }
+}

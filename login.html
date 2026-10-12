@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/browser-compat.js?v=22"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | بيتو فيزيكس</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=light4">
+    <link rel="stylesheet" href="css/physics-theme.css?v=10">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="config/auth-config.js"></script>
+    <link rel="stylesheet" href="css/mycv-editorial.css?v=24">
+    <link rel="stylesheet" href="css/account-enhancements.css?v=2">
+    <link rel="stylesheet" href="css/auth-page.css?v=5">
+<link rel="icon" type="image/png" href="assets/einstein-favicon.png?v=1"></head>
+<body class="auth-page physics-auth">
+    <header class="site-header">
+        <a class="site-logo" href="index.html" aria-label="B squared Physics by Eng. Peter"><span class="site-logo-mark">B<b>²</b></span><span class="site-logo-copy"><strong>Physics</strong><small>by Eng. Peter</small></span></a>
+        <nav class="site-nav" id="primary-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="notes.html">Notes</a><a href="exams.html">Exams</a><a href="about.html">About</a></nav>
+        <div class="site-actions"><button class="site-search-toggle" type="button" data-search-toggle aria-expanded="false" aria-controls="site-search-panel" aria-label="Open site search"><i class="fas fa-magnifying-glass" aria-hidden="true"></i></button><a class="site-login" href="login.html" aria-current="page"><i class="far fa-user" aria-hidden="true"></i><span>Login</span></a><button class="site-menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation menu"><i class="fas fa-bars" aria-hidden="true"></i></button></div>
+        <section class="site-search-panel" id="site-search-panel" aria-label="Search courses and lessons" hidden><form class="site-search-form" role="search"><label class="sr-only" for="site-search-input">Search courses and lessons</label><input id="site-search-input" type="search" placeholder="Search physics courses and lessons..." autocomplete="off"><button class="physics-button" type="submit">Search</button></form><div class="site-search-results" aria-live="polite"></div><p class="site-search-hint">Search by grade, unit, lesson, or physics topic.</p></section>
+    </header>
+    <main class="auth-shell physics-auth-shell">
+        <section class="auth-brand">
+            <a class="auth-logo" href="index.html"><span class="logo-icon">B²</span><span>B2 Physics</span></a>
+            <div class="auth-brand-copy">
+                <span class="auth-kicker">بيتو فيزيكس · المهندس بيتر</span>
+                <h1>مساحتك التعليمية<br><strong>لفهم الفيزياء</strong></h1>
+                <p>احتفظ بصفك الدراسي وتقدمك وملاحظاتك ونتائج اختباراتك في مكان واحد.</p>
+            </div>
+            <div class="auth-orbit orbit-one"></div>
+            <div class="auth-orbit orbit-two"></div>
+        </section>
+        <section class="auth-panel" aria-labelledby="auth-title">
+            <div class="auth-panel-inner">
+                <a class="auth-back" href="index.html"><i class="fas fa-arrow-right"></i> العودة إلى بيتو فيزيكس</a>
+                <div class="auth-heading">
+                    <span class="auth-icon"><i class="fas fa-user-lock"></i></span>
+                    <h2 id="auth-title">مرحبًا بعودتك</h2>
+                    <p id="auth-hint">سجّل دخولك للوصول إلى حسابك</p>
+                </div>
+                <form id="auth-form">
+                    <div class="auth-field" id="name-group" hidden>
+                        <label for="auth-name">الاسم</label>
+                        <input id="auth-name" type="text" autocomplete="name" placeholder="اكتب اسمك">
+                    </div>
+                    <div class="auth-field">
+                        <label for="auth-email">البريد الإلكتروني</label>
+                        <input id="auth-email" type="email" autocomplete="email" required placeholder="name@example.com">
+                    </div>
+                    <div class="auth-field">
+                        <label for="auth-password">كلمة المرور</label>
+                        <div class="password-field"><input id="auth-password" type="password" autocomplete="current-password" minlength="6" required placeholder="6 أحرف على الأقل"><button id="toggle-password" type="button" aria-label="إظهار كلمة المرور" title="إظهار كلمة المرور"><i class="far fa-eye"></i></button></div>
+                    </div>
+                    <button class="forgot-password" id="forgot-password" type="button">نسيت كلمة المرور؟</button>
+                    <button class="auth-submit" id="auth-submit" type="submit">تسجيل الدخول <i class="fas fa-arrow-left"></i></button>
+                    <div class="auth-divider"><span>أو</span></div>
+                    <button class="google-submit" id="google-submit" type="button"><i class="fab fa-google"></i> المتابعة باستخدام Google</button>
+                    <p id="auth-message" class="auth-message" role="status"></p>
+                </form>
+                <button class="auth-toggle" id="auth-toggle" type="button">ليس لديك حساب؟ أنشئ حسابًا</button>
+            </div>
+        </section>
+    </main>
+    <script src="js/courses-data.js?v=6"></script>
+    <script src="js/physics-ui.js?v=30"></script>
+    <script src="js/auth.js?v=4"></script>
+</body>
+</html>
